@@ -13,7 +13,7 @@ public class yearEndTaxBatch implements Database.Batchable<sObject>,Database.Sta
     public Database.QueryLocator start(Database.BatchableContext bc) {
         Integer year = Date.Today().year()-1;        
         return Database.getQueryLocator([SELECT LastName, id,Tax_Deductible_Gifts_Last_Year__c, (SELECT Id, CloseDate, Amount FROM Opportunities 
-                                                                                  WHERE CALENDAR_YEAR(CloseDate) =:year AND IsWon = True ORDER 
+                                                                                  WHERE CALENDAR_YEAR(CloseDate) =:year AND IsWon = True AND tax_deductible__c=TRUE ORDER 
                                                                                   BY CloseDate) FROM Contact WHERE Gifts_Last_Year_Tax_Deductible__c > 0 WITH SECURITY_ENFORCED]);          
     }
     
