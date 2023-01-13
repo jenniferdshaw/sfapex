@@ -17,7 +17,7 @@ public class yearEndtestDataFactory {
         List<Contact> cons = new List<Contact>();
         
         for(Integer i=0;i<numCts;i++) {
-            Contact a = new Contact(LastName='Test'+i,Email='basket@gmail.com',Gifts_Last_Year_Tax_Deductible__c=$60);
+            Contact a = new Contact(LastName='Test'+i,Email='basket@gmail.com',Gifts_Last_Year_Tax_Deductible__c=60);
             Cons.add(a);
         }
         insert Cons;
@@ -144,3 +144,4 @@ public class yearEndtestDataFactory {
         return cons;
         
     }
+}
